@@ -30,7 +30,7 @@ function time_ago($date,$granularity=2) {
     $periods = array(
         'year' => 31536000,
         'month' => 2628000,
-        'week' => 604800, 
+        'week' => 604800,
         'day' => 86400,
         'hour' => 3600,
         'minute' => 60,
@@ -49,7 +49,7 @@ function time_ago($date,$granularity=2) {
     if(strlen($retval) == 0) {
     	$retval = 'an instant';
     }
-    return 'joined: '.$retval.' ago';      
+    return 'joined: '.$retval.' ago';
 }
 
 //User Rater
@@ -58,7 +58,7 @@ function rateUser($post,$id) {
 	preg_match('#http://www.reddit.com/user/(.*?)">#', $post->description, $username);
 	$username = $username[0];
 	$username = preg_replace('#http://www.reddit.com/user/#', '', $username);
-	$username = preg_replace('#">#', '', $username);	
+	$username = preg_replace('#">#', '', $username);
 	//Get Username Info
 	$response = curlGet("http://www.reddit.com/user/$username/about.json");
 	$response = json_decode($response);
@@ -130,7 +130,7 @@ $acctage - total karma: $karma\n\n
 ---------------------------------------\n\n
 [report link](http://www.reddit.com/message/compose?to=%2Fr%2FRandom_Acts_Of_Pizza&subject=RAoP%20Bot%20Link%20Reported%20-%20".urlencode('http://redd.it/'.$idl).") or [send feedback](http://www.reddit.com/message/compose?to=interwhos&subject=RAoP%20Bot%20Feedback!)\n\n
 ---------------------------------------\n\n
-[Just Married! I <3 U mcredson!!!1!](http://www.reddit.com/r/Random_Acts_Of_Pizza/comments/tynt8/contest_will_u_mary_me/c4qtq53)\n\n
+[I'm open source!](http://www.reddit.com/r/Random_Acts_Of_Pizza/comments/uyos8/raopbot_is_now_open_source)\n\n
 ---------------------------------------";
 // Oops sorry I droped my egg on your face, but you did win a pizza
 	$urltopost = "http://www.reddit.com/api/comment";
